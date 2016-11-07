@@ -146,6 +146,8 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/pop.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Koloda.framework",
 			);
 			outputPaths = (
 			);
