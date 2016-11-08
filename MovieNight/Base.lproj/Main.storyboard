@@ -16,11 +16,27 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rpM-KL-Z9y">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rpM-KL-Z9y" secondAttribute="trailing" id="2mE-Hq-R4X"/>
+                            <constraint firstItem="rpM-KL-Z9y" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="b9X-Gw-i5K"/>
+                            <constraint firstItem="rpM-KL-Z9y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cM6-ld-n4k"/>
+                            <constraint firstItem="rpM-KL-Z9y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nvJ-XI-Fu1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="rpM-KL-Z9y" id="fcT-zU-xhW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="349" y="522"/>
         </scene>
     </scenes>
 </document>

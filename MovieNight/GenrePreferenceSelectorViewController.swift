@@ -17,6 +17,8 @@ class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelecto
     var selectionPhase: Int?
     var user_id: Int?
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
