@@ -28,3 +28,19 @@ enum MovieDatabase: Endpoint {
         }
     }
 }
+
+final class MovieDatabaseClient: APIClient {
+    
+    let configuration: NSURLSessionConfiguration
+    lazy var session: NSURLSession = {
+        return NSURLSession(configuration: self.configuration)
+    }()
+    
+    init(configuration: NSURLSessionConfiguration) {
+        self.configuration = configuration
+    }
+    
+    convenience init() {
+        self.init(configuration: .defaultSessionConfiguration())
+    }
+}
