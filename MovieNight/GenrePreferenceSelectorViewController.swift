@@ -24,3 +24,34 @@ class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelecto
     }
 }
 
+extension GenrePreferenceSelectorViewController: UITableViewDataSource {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let dataSource = dataSource, selectionPhase = selectionPhase else {
+            let numberOfCellsForTesting = 20
+            return numberOfCellsForTesting
+        }
+        
+        return dataSource.preferenceSelector(self, numberOfItemsInSection: selectionPhase)
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        guard let dataSource = dataSource, selectionPhase = selectionPhase else {
+            let cellForTesting = UITableViewCell()
+            cellForTesting.textLabel?.text = "\(indexPath.row)"
+            return cellForTesting
+        }
+        
+        guard let cell = tableView.dequeueReusableCellWithIdentifier("genreCell") else {
+            return UITableViewCell()
+        }
+        
+        let indexPath = NSIndexPath(forRow: indexPath.row, inSection: selectionPhase)
+        
+        cell.textLabel?.text = dataSource.preferenceSelector(self, itemForRowAtIndexPath: indexPath).description
+        
+        return cell
+    }
+}
