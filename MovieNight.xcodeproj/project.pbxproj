@@ -16,6 +16,7 @@
 		853ABA0D1DD0F9B100B6F7ED /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853ABA0B1DD0F9B100B6F7ED /* pop.framework */; };
 		853ABA121DD14F8400B6F7ED /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853ABA111DD14F8400B6F7ED /* APIClient.swift */; };
 		85B867331DD6C74000CDDC87 /* SelectableProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B867321DD6C74000CDDC87 /* SelectableProtocols.swift */; };
+		8559F8F71DD255D20089A653 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8559F8F61DD255D20089A653 /* Genre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		853ABA0B1DD0F9B100B6F7ED /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		853ABA111DD14F8400B6F7ED /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		85B867321DD6C74000CDDC87 /* SelectableProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableProtocols.swift; sourceTree = "<group>"; };
+		8559F8F61DD255D20089A653 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				853AB9F41DD0F7A100B6F7ED /* AppDelegate.swift */,
 				853ABA111DD14F8400B6F7ED /* APIClient.swift */,
+				8559F8F61DD255D20089A653 /* Genre.swift */,
 				853AB9F61DD0F7A100B6F7ED /* ViewController.swift */,
 				85B867321DD6C74000CDDC87 /* SelectableProtocols.swift */,
 				853AB9F81DD0F7A100B6F7ED /* Main.storyboard */,
@@ -172,6 +175,7 @@
 				85B867331DD6C74000CDDC87 /* SelectableProtocols.swift in Sources */,
 				853AB9F51DD0F7A100B6F7ED /* AppDelegate.swift in Sources */,
 				853ABA121DD14F8400B6F7ED /* APIClient.swift in Sources */,
+				8559F8F71DD255D20089A653 /* Genre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
