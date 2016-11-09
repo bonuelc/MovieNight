@@ -41,6 +41,17 @@ class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelecto
 
         directionsLabel.text = "\(numberOfItemsSelected) out of \(numberOfItemsToSelect) selected"
     }
+    
+    @IBAction func doneButtonTapped() {
+        
+        if let dataSource = dataSource, indexPaths = tableView.indexPathsForSelectedRows {
+            itemsSelected = dataSource.preferenceSelector(self, itemsForRowsAtIndexPaths: indexPaths)
+        }
+        
+        if let delegate = delegate {
+            delegate.preferenceSelectorDidFinishSelectingPreferences(self)
+        }
+    }
 }
 
 extension GenrePreferenceSelectorViewController: UITableViewDataSource {
