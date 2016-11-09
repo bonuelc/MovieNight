@@ -31,6 +31,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNn-bk-hCM">
+                                <rect key="frame" x="0.0" y="545" width="600" height="55"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x of X selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geo-eA-6ZN">
                                 <rect key="frame" x="0.0" y="545" width="600" height="55"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,13 +51,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gNn-bk-hCM" firstAttribute="leading" secondItem="geo-eA-6ZN" secondAttribute="leading" id="0vs-wS-XEQ"/>
                             <constraint firstAttribute="trailing" secondItem="rpM-KL-Z9y" secondAttribute="trailing" id="2mE-Hq-R4X"/>
+                            <constraint firstItem="gNn-bk-hCM" firstAttribute="top" secondItem="geo-eA-6ZN" secondAttribute="top" id="EEt-mh-j5n"/>
                             <constraint firstAttribute="trailing" secondItem="geo-eA-6ZN" secondAttribute="trailing" id="I8g-Kx-b8I"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="geo-eA-6ZN" secondAttribute="bottom" id="WxG-ma-Wtk"/>
                             <constraint firstItem="rpM-KL-Z9y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cM6-ld-n4k"/>
+                            <constraint firstItem="gNn-bk-hCM" firstAttribute="trailing" secondItem="geo-eA-6ZN" secondAttribute="trailing" id="hj5-oz-gEU"/>
                             <constraint firstItem="geo-eA-6ZN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nJ2-aV-T1P"/>
                             <constraint firstItem="rpM-KL-Z9y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nvJ-XI-Fu1"/>
                             <constraint firstItem="geo-eA-6ZN" firstAttribute="top" secondItem="rpM-KL-Z9y" secondAttribute="bottom" id="oek-Ei-m11"/>
+                            <constraint firstItem="gNn-bk-hCM" firstAttribute="bottom" secondItem="geo-eA-6ZN" secondAttribute="bottom" id="tl9-K5-PqF"/>
                         </constraints>
                     </view>
                     <connections>
