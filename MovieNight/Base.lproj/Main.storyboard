@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rpM-KL-Z9y">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="genreCell" id="1ws-xK-oPI">
@@ -31,16 +31,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x of X selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geo-eA-6ZN">
+                                <rect key="frame" x="0.0" y="545" width="600" height="55"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="3Cy-HB-RaC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rpM-KL-Z9y" secondAttribute="trailing" id="2mE-Hq-R4X"/>
-                            <constraint firstItem="rpM-KL-Z9y" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="b9X-Gw-i5K"/>
+                            <constraint firstAttribute="trailing" secondItem="geo-eA-6ZN" secondAttribute="trailing" id="I8g-Kx-b8I"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="geo-eA-6ZN" secondAttribute="bottom" id="WxG-ma-Wtk"/>
                             <constraint firstItem="rpM-KL-Z9y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cM6-ld-n4k"/>
+                            <constraint firstItem="geo-eA-6ZN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nJ2-aV-T1P"/>
                             <constraint firstItem="rpM-KL-Z9y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nvJ-XI-Fu1"/>
+                            <constraint firstItem="geo-eA-6ZN" firstAttribute="top" secondItem="rpM-KL-Z9y" secondAttribute="bottom" id="oek-Ei-m11"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="directionsLabel" destination="geo-eA-6ZN" id="Rrp-jI-hvG"/>
                         <outlet property="tableView" destination="rpM-KL-Z9y" id="fcT-zU-xhW"/>
                     </connections>
                 </viewController>

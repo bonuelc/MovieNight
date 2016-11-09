@@ -18,8 +18,13 @@ class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelecto
     var user_id: Int?
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var directionsLabel: UILabel!
     
-    var numberOfItemsSelected = 0
+    var numberOfItemsSelected = 0 {
+        didSet {
+            updateDirectionsLabel()
+        }
+    }
     let numberOfItemsToSelect = 5
     
     override func viewDidLoad() {
@@ -27,6 +32,13 @@ class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelecto
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        updateDirectionsLabel()
+    }
+    
+    func updateDirectionsLabel() {
+        
+        directionsLabel.text = "\(numberOfItemsSelected) out of \(numberOfItemsToSelect) selected"
     }
 }
 
@@ -70,11 +82,11 @@ extension GenrePreferenceSelectorViewController: UITableViewDelegate {
             return
         }
         
-        if numberOfGenresSelected < numberOfGenresToSelect {
+        if numberOfItemsSelected < numberOfItemsToSelect {
             
             cell.accessoryType = .Checkmark
             
-            numberOfGenresSelected += 1
+            numberOfItemsSelected += 1
             
         } else {
             
@@ -90,7 +102,7 @@ extension GenrePreferenceSelectorViewController: UITableViewDelegate {
         
         cell.accessoryType = .None
         
-        numberOfGenresSelected -= 1
+        numberOfItemsSelected -= 1
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
