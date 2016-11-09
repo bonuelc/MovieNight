@@ -57,3 +57,6 @@ extension GenrePreferenceSelectorViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension GenrePreferenceSelectorViewController: UITableViewDelegate {
+}
