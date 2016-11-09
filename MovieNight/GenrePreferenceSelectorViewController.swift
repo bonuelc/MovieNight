@@ -19,6 +19,9 @@ class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelecto
 
     @IBOutlet weak var tableView: UITableView!
     
+    var numberOfItemsSelected = 0
+    let numberOfItemsToSelect = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,5 +80,10 @@ extension GenrePreferenceSelectorViewController: UITableViewDelegate {
         }
         
         cell.accessoryType = .None
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        cell.accessoryType = cell.selected ? .Checkmark : .None
     }
 }
