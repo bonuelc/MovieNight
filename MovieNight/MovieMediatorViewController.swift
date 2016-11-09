@@ -21,6 +21,8 @@ class MovieMediatorViewController: UIViewController {
         return MovieDatabaseClient()
     }()
 
+    @IBOutlet weak var directionsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

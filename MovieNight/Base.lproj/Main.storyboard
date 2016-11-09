@@ -16,8 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="3Ui-Ry-EC3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete genre selections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7Y-kn-8fw">
+                                <rect key="frame" x="0.0" y="545" width="600" height="55"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="i52-Od-C9v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u7Y-kn-8fw" firstAttribute="leading" secondItem="3Ui-Ry-EC3" secondAttribute="leading" id="cRW-HA-Szs"/>
+                            <constraint firstAttribute="trailing" secondItem="u7Y-kn-8fw" secondAttribute="trailing" id="gMH-cg-ket"/>
+                            <constraint firstItem="tvN-Fd-hmH" firstAttribute="top" secondItem="u7Y-kn-8fw" secondAttribute="bottom" id="vp2-aN-DIL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="directionsLabel" destination="u7Y-kn-8fw" id="nga-zb-1wi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L80-Q9-5Cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
