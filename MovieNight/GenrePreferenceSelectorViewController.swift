@@ -70,7 +70,16 @@ extension GenrePreferenceSelectorViewController: UITableViewDelegate {
             return
         }
         
-        cell.accessoryType = .Checkmark
+        if numberOfGenresSelected < numberOfGenresToSelect {
+            
+            cell.accessoryType = .Checkmark
+            
+            numberOfGenresSelected += 1
+            
+        } else {
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        }
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
@@ -80,6 +89,8 @@ extension GenrePreferenceSelectorViewController: UITableViewDelegate {
         }
         
         cell.accessoryType = .None
+        
+        numberOfGenresSelected -= 1
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
