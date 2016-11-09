@@ -17,6 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbo-hG-HGj">
+                                <rect key="frame" x="0.0" y="545" width="600" height="55"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Select movie preferences">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete genre selections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7Y-kn-8fw">
                                 <rect key="frame" x="0.0" y="545" width="600" height="55"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,27 +34,45 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbo-hG-HGj">
-                                <rect key="frame" x="0.0" y="545" width="600" height="55"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Select movie preferences">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBe-Ml-hfk">
+                                <rect key="frame" x="0.0" y="20" width="600" height="263"/>
+                                <state key="normal" title="User 1"/>
+                                <connections>
+                                    <action selector="user1ButtonTapped:" destination="nmK-LR-d2Z" eventType="touchUpInside" id="Dhn-0b-CRd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndk-LC-vAW">
+                                <rect key="frame" x="0.0" y="283" width="600" height="262"/>
+                                <state key="normal" title="User 2"/>
+                                <connections>
+                                    <action selector="user2ButtonTapped:" destination="nmK-LR-d2Z" eventType="touchUpInside" id="7A0-O0-B0d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Qbo-hG-HGj" firstAttribute="bottom" secondItem="u7Y-kn-8fw" secondAttribute="bottom" id="7Uj-ug-ZyX"/>
+                            <constraint firstItem="Ndk-LC-vAW" firstAttribute="height" secondItem="XBe-Ml-hfk" secondAttribute="height" id="HGM-gD-bnT"/>
                             <constraint firstItem="Qbo-hG-HGj" firstAttribute="leading" secondItem="u7Y-kn-8fw" secondAttribute="leading" id="KVa-F6-B7U"/>
+                            <constraint firstItem="Ndk-LC-vAW" firstAttribute="top" secondItem="XBe-Ml-hfk" secondAttribute="bottom" id="MnO-cq-mPm"/>
+                            <constraint firstItem="XBe-Ml-hfk" firstAttribute="top" secondItem="add-ov-YfF" secondAttribute="bottom" id="PTc-KD-vhe"/>
+                            <constraint firstItem="XBe-Ml-hfk" firstAttribute="leading" secondItem="3Ui-Ry-EC3" secondAttribute="leading" id="WNv-5p-JLy"/>
                             <constraint firstItem="u7Y-kn-8fw" firstAttribute="leading" secondItem="3Ui-Ry-EC3" secondAttribute="leading" id="cRW-HA-Szs"/>
                             <constraint firstItem="Qbo-hG-HGj" firstAttribute="trailing" secondItem="u7Y-kn-8fw" secondAttribute="trailing" id="dVC-Ru-ZB1"/>
                             <constraint firstAttribute="trailing" secondItem="u7Y-kn-8fw" secondAttribute="trailing" id="gMH-cg-ket"/>
+                            <constraint firstAttribute="trailing" secondItem="XBe-Ml-hfk" secondAttribute="trailing" id="ggQ-eE-DMb"/>
+                            <constraint firstItem="Ndk-LC-vAW" firstAttribute="leading" secondItem="3Ui-Ry-EC3" secondAttribute="leading" id="l3X-ZO-rmh"/>
+                            <constraint firstItem="u7Y-kn-8fw" firstAttribute="top" secondItem="Ndk-LC-vAW" secondAttribute="bottom" id="la8-Tn-Dfp"/>
                             <constraint firstItem="tvN-Fd-hmH" firstAttribute="top" secondItem="u7Y-kn-8fw" secondAttribute="bottom" id="vp2-aN-DIL"/>
+                            <constraint firstAttribute="trailing" secondItem="Ndk-LC-vAW" secondAttribute="trailing" id="yYt-iU-9lf"/>
                             <constraint firstItem="Qbo-hG-HGj" firstAttribute="top" secondItem="u7Y-kn-8fw" secondAttribute="top" id="zMb-Hx-ted"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="directionsLabel" destination="u7Y-kn-8fw" id="nga-zb-1wi"/>
+                        <outlet property="user1Button" destination="XBe-Ml-hfk" id="Lxk-N7-tx0"/>
+                        <outlet property="user2Button" destination="Ndk-LC-vAW" id="56N-mZ-VQK"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="genrePreferenceSegue" id="yXb-rk-CwJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L80-Q9-5Cf" userLabel="First Responder" sceneMemberID="firstResponder"/>

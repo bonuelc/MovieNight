@@ -21,12 +21,22 @@ class MovieMediatorViewController: UIViewController {
         return MovieDatabaseClient()
     }()
 
+    @IBOutlet weak var user1Button: UIButton!
+    @IBOutlet weak var user2Button: UIButton!
     @IBOutlet weak var directionsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fetchGenres()
+    }
+    
+    @IBAction func user1ButtonTapped(sender: UIButton) {
+        performSegueWithIdentifier("genrePreferenceSegue", sender: sender)
+    }
+    
+    @IBAction func user2ButtonTapped(sender: UIButton) {
+        performSegueWithIdentifier("genrePreferenceSegue", sender: sender)
     }
     
     func fetchGenres() {
