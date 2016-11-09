@@ -27,12 +27,23 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbo-hG-HGj">
+                                <rect key="frame" x="0.0" y="545" width="600" height="55"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Select movie preferences">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Qbo-hG-HGj" firstAttribute="bottom" secondItem="u7Y-kn-8fw" secondAttribute="bottom" id="7Uj-ug-ZyX"/>
+                            <constraint firstItem="Qbo-hG-HGj" firstAttribute="leading" secondItem="u7Y-kn-8fw" secondAttribute="leading" id="KVa-F6-B7U"/>
                             <constraint firstItem="u7Y-kn-8fw" firstAttribute="leading" secondItem="3Ui-Ry-EC3" secondAttribute="leading" id="cRW-HA-Szs"/>
+                            <constraint firstItem="Qbo-hG-HGj" firstAttribute="trailing" secondItem="u7Y-kn-8fw" secondAttribute="trailing" id="dVC-Ru-ZB1"/>
                             <constraint firstAttribute="trailing" secondItem="u7Y-kn-8fw" secondAttribute="trailing" id="gMH-cg-ket"/>
                             <constraint firstItem="tvN-Fd-hmH" firstAttribute="top" secondItem="u7Y-kn-8fw" secondAttribute="bottom" id="vp2-aN-DIL"/>
+                            <constraint firstItem="Qbo-hG-HGj" firstAttribute="top" secondItem="u7Y-kn-8fw" secondAttribute="top" id="zMb-Hx-ted"/>
                         </constraints>
                     </view>
                     <connections>
