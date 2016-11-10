@@ -81,3 +81,24 @@ extension MovieMediatorViewController: PreferenceSelectorDataSource {
         }
     }
 }
+
+extension MovieMediatorViewController: PreferenceSelectorDelegate {
+    
+    func preferenceSelectorDidFinishSelectingPreferences(preferenceSelector: PreferenceSelector) {
+        
+        if let preferenceSelector = preferenceSelector as? UIViewController {
+            preferenceSelector.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        guard let selectionPhase = preferenceSelector.selectionPhase, user_id = preferenceSelector.user_id else {
+            return
+        }
+        
+        if selectionPhase == 0 {
+            genresSelected[user_id] = preferenceSelector.itemsSelected.map { $0 as! Genre }
+        } else {
+            moviesSelected[user_id] = preferenceSelector.itemsSelected.map { $0 as! Movie }
+        }
+    }
+}
+
