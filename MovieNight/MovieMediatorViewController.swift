@@ -54,6 +54,10 @@ class MovieMediatorViewController: UIViewController {
         performSegueWithIdentifier("genrePreferenceSegue", sender: sender)
     }
     
+    @IBAction func doneButtonTapped(sender: UIButton) {
+        performSegueWithIdentifier("moviePreferenceSegue", sender: sender)
+    }
+
     func fetchGenres() {
         movieDatabaseClient.fetchGenres { result in
             switch result {

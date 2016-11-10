@@ -23,6 +23,9 @@
                                 <state key="normal" title="Select movie preferences">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="nmK-LR-d2Z" eventType="touchUpInside" id="TCM-dA-TdP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete genre selections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7Y-kn-8fw">
                                 <rect key="frame" x="0.0" y="545" width="600" height="55"/>
@@ -73,6 +76,7 @@
                         <outlet property="user1Button" destination="XBe-Ml-hfk" id="Lxk-N7-tx0"/>
                         <outlet property="user2Button" destination="Ndk-LC-vAW" id="56N-mZ-VQK"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="genrePreferenceSegue" id="yXb-rk-CwJ"/>
+                        <segue destination="C7x-0q-L93" kind="presentation" identifier="moviePreferenceSegue" id="ZN7-B6-XwP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L80-Q9-5Cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
