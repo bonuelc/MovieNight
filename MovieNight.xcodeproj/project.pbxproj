@@ -19,6 +19,7 @@
 		8559F8FB1DD271E30089A653 /* MovieDatabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8559F8FA1DD271E30089A653 /* MovieDatabaseClient.swift */; };
 		85B867311DD6C0AF00CDDC87 /* PreferenceSelectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B867301DD6C0AF00CDDC87 /* PreferenceSelectorProtocol.swift */; };
 		85B867331DD6C74000CDDC87 /* SelectableProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B867321DD6C74000CDDC87 /* SelectableProtocols.swift */; };
+		85D3EC5A1DD3C84000A222B3 /* MovieMediatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D3EC591DD3C84000A222B3 /* MovieMediatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8559F8FA1DD271E30089A653 /* MovieDatabaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDatabaseClient.swift; sourceTree = "<group>"; };
 		85B867301DD6C0AF00CDDC87 /* PreferenceSelectorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceSelectorProtocol.swift; sourceTree = "<group>"; };
 		85B867321DD6C74000CDDC87 /* SelectableProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableProtocols.swift; sourceTree = "<group>"; };
+		85D3EC591DD3C84000A222B3 /* MovieMediatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieMediatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				8559F8F61DD255D20089A653 /* Genre.swift */,
 				85B867321DD6C74000CDDC87 /* SelectableProtocols.swift */,
 				853AB9F61DD0F7A100B6F7ED /* GenrePreferenceSelectorViewController.swift */,
+				85D3EC591DD3C84000A222B3 /* MovieMediatorViewController.swift */,
 				853AB9F81DD0F7A100B6F7ED /* Main.storyboard */,
 				853AB9FB1DD0F7A100B6F7ED /* Assets.xcassets */,
 				853AB9FD1DD0F7A100B6F7ED /* LaunchScreen.storyboard */,
@@ -181,6 +184,7 @@
 				85B867331DD6C74000CDDC87 /* SelectableProtocols.swift in Sources */,
 				85B867311DD6C0AF00CDDC87 /* PreferenceSelectorProtocol.swift in Sources */,
 				853AB9F51DD0F7A100B6F7ED /* AppDelegate.swift in Sources */,
+				85D3EC5A1DD3C84000A222B3 /* MovieMediatorViewController.swift in Sources */,
 				853ABA121DD14F8400B6F7ED /* APIClient.swift in Sources */,
 				8559F8FB1DD271E30089A653 /* MovieDatabaseClient.swift in Sources */,
 				8559F8F71DD255D20089A653 /* Genre.swift in Sources */,
