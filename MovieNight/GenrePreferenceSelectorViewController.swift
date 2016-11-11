@@ -60,4 +60,22 @@ extension GenrePreferenceSelectorViewController: UITableViewDataSource {
 }
 
 extension GenrePreferenceSelectorViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        guard let cell = tableView.cellForRowAtIndexPath(indexPath) else {
+            return
+        }
+        
+        cell.accessoryType = .Checkmark
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        guard let cell = tableView.cellForRowAtIndexPath(indexPath) else {
+            return
+        }
+        
+        cell.accessoryType = .None
+    }
 }
