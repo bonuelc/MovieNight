@@ -49,3 +49,28 @@ class MovieMediatorViewController: UIViewController {
         }
     }
 }
+
+extension MovieMediatorViewController: PreferenceSelectorDataSource {
+    
+    func preferenceSelector(preferenceSelector: PreferenceSelector, numberOfItemsInSection section: Int) -> Int {
+        
+        guard let selectionPhase = preferenceSelector.selectionPhase else {
+            return 0
+        }
+        
+        return selectionPhase == 0 ? genresFromWhichToSelect.count : moviesFromWhichToSelect.count
+    }
+    
+    func preferenceSelector(preferenceSelector: PreferenceSelector, itemForRowAtIndexPath indexPath: NSIndexPath) -> Selectable {
+        
+        guard let selectionPhase = preferenceSelector.selectionPhase else {
+            return genresFromWhichToSelect[indexPath.row] // TODO: return a different dummy value
+        }
+        
+        if selectionPhase == 0 {
+            return genresFromWhichToSelect[indexPath.row]
+        } else {
+            return moviesFromWhichToSelect[indexPath.row]
+        }
+    }
+}
