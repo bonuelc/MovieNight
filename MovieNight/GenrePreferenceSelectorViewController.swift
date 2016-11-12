@@ -8,7 +8,14 @@
 
 import UIKit
 
-class GenrePreferenceSelectorViewController: UIViewController {
+class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelector {
+    
+    var itemsSelected: [Selectable] = []
+        
+    var dataSource: PreferenceSelectorDataSource?
+    var delegate: PreferenceSelectorDelegate?
+    var selectionPhase: Int?
+    var user_id: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
