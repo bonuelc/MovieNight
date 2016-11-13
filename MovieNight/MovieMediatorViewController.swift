@@ -48,6 +48,13 @@ class MovieMediatorViewController: UIViewController {
             }
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let genrePreferenceSelectorVC = segue.destinationViewController as? GenrePreferenceSelectorViewController {
+            genrePreferenceSelectorVC.dataSource = self
+        }
+    }
 }
 
 extension MovieMediatorViewController: PreferenceSelectorDataSource {
