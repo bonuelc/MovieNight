@@ -23,5 +23,17 @@ class MovieMediatorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchGenres()
+    }
+    
+    func fetchGenres() {
+        movieDatabaseClient.fetchGenres { result in
+            switch result {
+            case .Success(let genres): self.genresFromWhichToSelect = genres
+            case .Failure(let error as NSError): print(error)
+            default: break // TODO: why does the compiler think this is necessary?
+            }
+        }
     }
 }
