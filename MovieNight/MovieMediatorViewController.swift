@@ -51,9 +51,11 @@ class MovieMediatorViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let genrePreferenceSelectorVC = segue.destinationViewController as? GenrePreferenceSelectorViewController {
+        if let genrePreferenceSelectorVC = segue.destinationViewController as? GenrePreferenceSelectorViewController, button = sender as? UIButton {
             genrePreferenceSelectorVC.dataSource = self
             genrePreferenceSelectorVC.delegate = self
+            genrePreferenceSelectorVC.selectionPhase = 0
+            genrePreferenceSelectorVC.user_id = button == user1Button ? 0 : 1
         }
     }
 }
