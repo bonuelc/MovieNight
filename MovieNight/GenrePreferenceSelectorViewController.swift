@@ -23,6 +23,7 @@ class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelecto
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
