@@ -16,6 +16,10 @@ class MovieMediatorViewController: UIViewController {
     // count = 1 per user
     var genresSelected = [[Genre]](count: 2, repeatedValue: [])
     var moviesSelected = [[Movie]](count: 2, repeatedValue: [])
+    
+    lazy var movieDatabaseClient: MovieDatabaseClient = {
+        return MovieDatabaseClient()
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
