@@ -9,6 +9,13 @@
 import UIKit
 
 class MovieMediatorViewController: UIViewController {
+    
+    var genresFromWhichToSelect = [Genre]()
+    var moviesFromWhichToSelect = [Movie]()
+    
+    // count = 1 per user
+    var genresSelected = [[Genre]](count: 2, repeatedValue: [])
+    var moviesSelected = [[Movie]](count: 2, repeatedValue: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
