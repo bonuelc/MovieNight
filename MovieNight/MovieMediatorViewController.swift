@@ -53,6 +53,7 @@ class MovieMediatorViewController: UIViewController {
         
         if let genrePreferenceSelectorVC = segue.destinationViewController as? GenrePreferenceSelectorViewController {
             genrePreferenceSelectorVC.dataSource = self
+            genrePreferenceSelectorVC.delegate = self
         }
     }
 }
