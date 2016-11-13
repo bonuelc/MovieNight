@@ -8,13 +8,28 @@
 
 import UIKit
 
+extension Array {
+    func all(predicate: (element: Element) -> Bool) -> Bool {
+        for item in self {
+            if !predicate(element: item) {
+                return false
+            }
+        }
+        return true
+    }
+}
+
 class MovieMediatorViewController: UIViewController {
     
     var genresFromWhichToSelect = [Genre]()
     var moviesFromWhichToSelect = [Movie]()
     
     // count = 1 per user
-    var genresSelected = [[Genre]](count: 2, repeatedValue: [])
+    var genresSelected = [[Genre]](count: 2, repeatedValue: []) {
+        didSet {
+            directionsLabel.hidden = genresSelected.all { !$0.isEmpty }
+        }
+    }
     var moviesSelected = [[Movie]](count: 2, repeatedValue: [])
     
     lazy var movieDatabaseClient: MovieDatabaseClient = {
