@@ -21,6 +21,8 @@ class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelecto
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
     }
 }
 
