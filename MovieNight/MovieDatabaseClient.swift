@@ -11,6 +11,7 @@ import Foundation
 enum MovieDatabase: Endpoint {
     
     case Genres
+    case Movies(genre_ids: [Int])
     
     var baseURL: String {
         return "https://api.themoviedb.org"
@@ -19,12 +20,22 @@ enum MovieDatabase: Endpoint {
     var path: String {
         switch self {
         case .Genres: return "/3/genre/movie/list"
+        case .Movies: return "/3/discover/movie"
         }
     }
     
     var parameters: [String : AnyObject] {
         switch self {
-        case .Genres: return ["api_key":"fa302c15c454ce6a52f9f56679bdc266", "language":"en-US"]
+        case .Genres:
+            return ["api_key":"fa302c15c454ce6a52f9f56679bdc266",
+                    "language":"en-US"]
+        case .Movies(let genre_ids):
+            let genres = genre_ids.map {  $0.description }.joinWithSeparator(",") // "12,16,28"
+            return ["api_key" : "fa302c15c454ce6a52f9f56679bdc266",
+                    "language" : "en-US",
+                    "sort_by" : "popularity.desc",
+                    "page" : "1",
+                    "with_genres" : genres]
         }
     }
 }
