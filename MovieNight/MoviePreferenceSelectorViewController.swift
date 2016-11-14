@@ -30,7 +30,14 @@
 
 import UIKit
 
-class MoviePreferenceSelectorViewController: UIViewController {
+class MoviePreferenceSelectorViewController: UIViewController, PreferenceSelector {
+    
+    var itemsSelected: [Selectable] = []
+    
+    var dataSource: PreferenceSelectorDataSource?
+    var delegate: PreferenceSelectorDelegate?
+    var selectionPhase: Int?
+    var user_id: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
