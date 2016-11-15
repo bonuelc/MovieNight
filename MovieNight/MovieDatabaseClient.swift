@@ -43,6 +43,7 @@ enum MovieDatabase: Endpoint {
 final class MovieDatabaseClient: APIClient {
     
     let genresKey = "genres"
+    let moviesKey = "results"
     
     let configuration: NSURLSessionConfiguration
     lazy var session: NSURLSession = {
@@ -66,6 +67,19 @@ final class MovieDatabaseClient: APIClient {
             guard let genres = json[self.genresKey] as? [[String: AnyObject]] else { return nil }
             
             return genres.flatMap { return Genre(JSON: $0) }
+            
+            }, completion: completion)
+    }
+    
+    func fetchMovies(genre_ids: [Int], completion: APIResult<[Movie]> -> Void) {
+        
+        let endpoint = MovieDatabase.Movies(genre_ids: genre_ids)
+        
+        fetch(endpoint, parse: { json -> [Movie]? in
+            
+            guard let movies = json[self.moviesKey] as? [[String: AnyObject]] else { return nil }
+            
+            return movies.flatMap { return Movie(JSON: $0) }
             
             }, completion: completion)
     }
