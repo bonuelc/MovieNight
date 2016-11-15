@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Movie: Entity {
+struct Movie: Entity, Equatable {
     var id: Int
     var description: String
     var posterView: UIView
@@ -27,4 +27,8 @@ extension Movie: JSONDecodable {
         self.description = title
         self.posterView = UIImageView(image: image)
     }
+}
+
+func ==(lhs:Movie, rhs:Movie) -> Bool {
+    return lhs.id == rhs.id
 }

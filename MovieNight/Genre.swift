@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Genre: Filter {
+struct Genre: Filter, Equatable {
     var id: Int
     var description: String
 }
@@ -22,4 +22,8 @@ extension Genre: JSONDecodable {
         self.id = id
         self.description = name
     }
+}
+
+func ==(lhs:Genre, rhs:Genre) -> Bool {
+    return lhs.id == rhs.id
 }
