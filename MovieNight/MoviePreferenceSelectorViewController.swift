@@ -75,3 +75,5 @@ extension MoviePreferenceSelectorViewController: KolodaViewDataSource {
         return movie.posterView
     }
 }
+
+extension MoviePreferenceSelectorViewController: KolodaViewDelegate {}
