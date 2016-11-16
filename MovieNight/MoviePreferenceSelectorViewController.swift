@@ -77,4 +77,22 @@ extension MoviePreferenceSelectorViewController: KolodaViewDataSource {
     }
 }
 
-extension MoviePreferenceSelectorViewController: KolodaViewDelegate {}
+extension MoviePreferenceSelectorViewController: KolodaViewDelegate {
+    
+    func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
+        
+        if direction == .Left {
+            return
+        }
+        
+        guard let dataSource = dataSource, selectionPhase = selectionPhase else {
+            return
+        }
+        
+        let index = Int(index)
+        let indexPath = NSIndexPath(forRow: index, inSection: selectionPhase)
+        let selectedItem = dataSource.preferenceSelector(self, itemForRowAtIndexPath: indexPath)
+        
+        itemsSelected.append(selectedItem)
+    }
+}
