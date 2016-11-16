@@ -68,6 +68,16 @@ class MovieMediatorViewController: UIViewController {
         }
     }
     
+    func fetchMovies(genre_ids: Int...) {
+        movieDatabaseClient.fetchMovies(genre_ids) { result in
+            switch result {
+            case .Success(let movies): self.moviesFromWhichToSelect = movies
+            case .Failure(let error as NSError): print(error)
+            default: break // TODO: why does the compiler think this is necessary?
+            }
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let genrePreferenceSelectorVC = segue.destinationViewController as? GenrePreferenceSelectorViewController, button = sender as? UIButton {
