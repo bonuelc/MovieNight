@@ -46,3 +46,30 @@ class MoviePreferenceSelectorViewController: UIViewController, PreferenceSelecto
         super.viewDidLoad()
     }
 }
+
+extension MoviePreferenceSelectorViewController: KolodaViewDataSource {
+    
+    func kolodaNumberOfCards(koloda: KolodaView) -> UInt {
+        
+        guard let dataSource = dataSource, selectionPhase = selectionPhase else {
+            return UInt(0)
+        }
+        
+        return UInt(dataSource.preferenceSelector(self, numberOfItemsInSection: selectionPhase))
+    }
+    
+    func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
+        
+        guard let dataSource = dataSource, selectionPhase = selectionPhase else {
+            return UIView()
+        }
+        
+        let index = Int(index)
+        let indexPath = NSIndexPath(forRow: index, inSection: selectionPhase)
+        guard let movie = dataSource.preferenceSelector(self, itemForRowAtIndexPath: indexPath) as? Movie else {
+            return UIView()
+        }
+        
+        return movie.posterView
+    }
+}
