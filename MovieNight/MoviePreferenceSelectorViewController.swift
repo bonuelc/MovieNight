@@ -46,6 +46,7 @@ class MoviePreferenceSelectorViewController: UIViewController, PreferenceSelecto
         super.viewDidLoad()
         
         movieView.dataSource = self
+        movieView.delegate = self
     }
 }
 
