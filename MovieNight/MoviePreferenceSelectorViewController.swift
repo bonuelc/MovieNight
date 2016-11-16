@@ -44,6 +44,8 @@ class MoviePreferenceSelectorViewController: UIViewController, PreferenceSelecto
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        movieView.dataSource = self
     }
 }
 
