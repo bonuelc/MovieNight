@@ -128,6 +128,11 @@ class MovieMediatorViewController: UIViewController {
             genrePreferenceSelectorVC.delegate = self
             genrePreferenceSelectorVC.selectionPhase = 0
             genrePreferenceSelectorVC.user_id = button == user1Button ? 0 : 1
+        } else if let moviePreferenceSelectorViewController = segue.destinationViewController as? MoviePreferenceSelectorViewController {
+            moviePreferenceSelectorViewController.dataSource = self
+            moviePreferenceSelectorViewController.delegate = self
+            moviePreferenceSelectorViewController.selectionPhase = 1
+            moviePreferenceSelectorViewController.user_id = 0
         }
     }
 }
