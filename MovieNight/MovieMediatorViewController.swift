@@ -112,6 +112,15 @@ class MovieMediatorViewController: UIViewController {
         }
     }
     
+    @IBAction func doneButtonTapped() {
+        
+        guard let genreToSearch = genreIDsAgreedUpon.popLast() else {
+            return
+        }
+        
+        fetchMovies(genreToSearch)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let genrePreferenceSelectorVC = segue.destinationViewController as? GenrePreferenceSelectorViewController, button = sender as? UIButton {
