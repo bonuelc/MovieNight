@@ -206,7 +206,7 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
                 return
             }
             
-            moviesSelected[user_id] = preferenceSelector.itemsSelected.map { $0 as! Movie }
+            moviesSelected[user_id].appendContentsOf(preferenceSelector.itemsSelected.map { $0 as! Movie })
             
             if user_id != last_user_id {
                 performSegueWithIdentifier("moviePreferenceSegue", sender: sender)
