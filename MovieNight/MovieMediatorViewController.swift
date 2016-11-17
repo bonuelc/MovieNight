@@ -180,6 +180,10 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
             if user_id != last_user_id {
                 performSegueWithIdentifier("genrePreferenceSegue", sender: sender)
             } else {
+                guard let highestPriorityGenreID = nextGenreIDToFetch else {
+                    fatalError("nextGenreIDToFetch returned nil the first time it was called.")
+                }
+                fetchMovies(highestPriorityGenreID)
                 performSegueWithIdentifier("moviePreferenceSegue", sender: sender)
             }
             
