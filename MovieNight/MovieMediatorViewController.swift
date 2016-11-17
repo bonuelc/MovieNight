@@ -197,6 +197,8 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
             
             if user_id != last_user_id {
                 performSegueWithIdentifier("moviePreferenceSegue", sender: sender)
+            } else {
+                performSegueWithIdentifier("resultsTableViewSegue", sender: sender)
             }
         }
     }
