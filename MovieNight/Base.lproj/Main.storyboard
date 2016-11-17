@@ -45,6 +45,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="startButton" destination="Qbo-hG-HGj" id="Tny-AM-7Gq"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="genrePreferenceSegue" id="yXb-rk-CwJ"/>
                         <segue destination="C7x-0q-L93" kind="presentation" identifier="moviePreferenceSegue" id="ZN7-B6-XwP"/>
                     </connections>
