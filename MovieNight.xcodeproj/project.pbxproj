@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8518411F1DD7683400ADDE40 /* GenrePreferenceSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AB9F61DD0F7A100B6F7ED /* GenrePreferenceSelectorViewController.swift */; };
 		852712171DDE155A00FCCA19 /* MoviePreferenceSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B0775B1DD532A100EF8ADA /* MoviePreferenceSelectorViewController.swift */; };
+		852712191DDE587800FCCA19 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852712181DDE587800FCCA19 /* ResultsTableViewController.swift */; };
 		853AB9F51DD0F7A100B6F7ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853AB9F41DD0F7A100B6F7ED /* AppDelegate.swift */; };
 		853AB9FA1DD0F7A100B6F7ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853AB9F81DD0F7A100B6F7ED /* Main.storyboard */; };
 		853AB9FC1DD0F7A100B6F7ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853AB9FB1DD0F7A100B6F7ED /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		852712181DDE587800FCCA19 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		853AB9F11DD0F7A000B6F7ED /* MovieNight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieNight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		853AB9F41DD0F7A100B6F7ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		853AB9F61DD0F7A100B6F7ED /* GenrePreferenceSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenrePreferenceSelectorViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				853AB9F61DD0F7A100B6F7ED /* GenrePreferenceSelectorViewController.swift */,
 				85D3EC591DD3C84000A222B3 /* MovieMediatorViewController.swift */,
 				85B0775B1DD532A100EF8ADA /* MoviePreferenceSelectorViewController.swift */,
+				852712181DDE587800FCCA19 /* ResultsTableViewController.swift */,
 				853AB9F81DD0F7A100B6F7ED /* Main.storyboard */,
 				853AB9FB1DD0F7A100B6F7ED /* Assets.xcassets */,
 				853AB9FD1DD0F7A100B6F7ED /* LaunchScreen.storyboard */,
@@ -191,6 +194,7 @@
 				85B867331DD6C74000CDDC87 /* SelectableProtocols.swift in Sources */,
 				85B867311DD6C0AF00CDDC87 /* PreferenceSelectorProtocol.swift in Sources */,
 				859A01D71DDA6418001C46EC /* Movie.swift in Sources */,
+				852712191DDE587800FCCA19 /* ResultsTableViewController.swift in Sources */,
 				853AB9F51DD0F7A100B6F7ED /* AppDelegate.swift in Sources */,
 				85D3EC5A1DD3C84000A222B3 /* MovieMediatorViewController.swift in Sources */,
 				853ABA121DD14F8400B6F7ED /* APIClient.swift in Sources */,
