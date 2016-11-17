@@ -139,6 +139,8 @@ class MovieMediatorViewController: UIViewController {
                     moviePreferenceSelectorViewController.user_id = user_id + 1
                 }
             }
+        } else if let resultsTableVC = segue.destinationViewController as? ResultsTableViewController {
+            resultsTableVC.data = moviesAgreedUpon
         }
     }
 }
