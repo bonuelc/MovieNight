@@ -94,6 +94,10 @@ class MovieMediatorViewController: UIViewController {
         }
     }
     
+    @IBAction func startButtonTapped(sender: UIButton) {
+        performSegueWithIdentifier("genrePreferenceSegue", sender: sender)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let genrePreferenceSelectorVC = segue.destinationViewController as? GenrePreferenceSelectorViewController {
