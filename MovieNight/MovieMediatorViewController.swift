@@ -29,6 +29,10 @@ class MovieMediatorViewController: UIViewController {
     var genresSelected = [[Genre]](count: numberOfUsers, repeatedValue: [])
     var moviesSelected = [[Movie]](count: numberOfUsers, repeatedValue: [])
     
+    var last_user_id: Int {
+        return numberOfUsers - 1
+    }
+    
     lazy var movieDatabaseClient: MovieDatabaseClient = {
         return MovieDatabaseClient()
     }()
