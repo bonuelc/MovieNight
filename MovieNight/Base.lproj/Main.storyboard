@@ -51,6 +51,7 @@
                         <outlet property="startButton" destination="Qbo-hG-HGj" id="Tny-AM-7Gq"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="genrePreferenceSegue" id="yXb-rk-CwJ"/>
                         <segue destination="C7x-0q-L93" kind="presentation" identifier="moviePreferenceSegue" id="ZN7-B6-XwP"/>
+                        <segue destination="dAU-K2-w6V" kind="presentation" identifier="resultsTableViewSegue" id="lGz-5J-OJa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L80-Q9-5Cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
