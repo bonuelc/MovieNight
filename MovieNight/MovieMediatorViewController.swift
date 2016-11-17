@@ -109,12 +109,25 @@ class MovieMediatorViewController: UIViewController {
             genrePreferenceSelectorVC.dataSource = self
             genrePreferenceSelectorVC.delegate = self
             genrePreferenceSelectorVC.selectionPhase = 0
-//            genrePreferenceSelectorVC.user_id = button == user1Button ? 0 : 1
+            if let button = sender as? UIButton where button == startButton {
+                genrePreferenceSelectorVC.user_id = 0
+            } else if let sender = sender as? GenrePreferenceSelectorViewController, user_id = sender.user_id {
+                genrePreferenceSelectorVC.user_id = user_id + 1
+            }
         } else if let moviePreferenceSelectorViewController = segue.destinationViewController as? MoviePreferenceSelectorViewController {
             moviePreferenceSelectorViewController.dataSource = self
             moviePreferenceSelectorViewController.delegate = self
             moviePreferenceSelectorViewController.selectionPhase = 1
-            moviePreferenceSelectorViewController.user_id = 0
+            if let _ = sender as? GenrePreferenceSelectorViewController {
+                moviePreferenceSelectorViewController.user_id = 0
+            } else if let sender = sender as? MoviePreferenceSelectorViewController, user_id = sender.user_id {
+                if user_id == last_user_id {
+                    // restart selection from a new set of movies
+                    moviePreferenceSelectorViewController.user_id = 0
+                } else {
+                    moviePreferenceSelectorViewController.user_id = user_id + 1
+                }
+            }
         }
     }
 }
@@ -157,9 +170,30 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
         }
         
         if selectionPhase == 0 {
+            
+            guard let sender = preferenceSelector as? GenrePreferenceSelectorViewController else {
+                return
+            }
+            
             genresSelected[user_id] = preferenceSelector.itemsSelected.map { $0 as! Genre }
+            
+            if user_id != last_user_id {
+                performSegueWithIdentifier("genrePreferenceSegue", sender: sender)
+            } else {
+                performSegueWithIdentifier("moviePreferenceSegue", sender: sender)
+            }
+            
         } else {
+            
+            guard let sender = preferenceSelector as? MoviePreferenceSelectorViewController else {
+                return
+            }
+            
             moviesSelected[user_id] = preferenceSelector.itemsSelected.map { $0 as! Movie }
+            
+            if user_id != last_user_id {
+                performSegueWithIdentifier("moviePreferenceSegue", sender: sender)
+            }
         }
     }
 }
