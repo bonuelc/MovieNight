@@ -25,11 +25,7 @@ class MovieMediatorViewController: UIViewController {
     var moviesFromWhichToSelect = [Movie]()
     
     // count = 1 per user
-    var genresSelected = [[Genre]](count: 2, repeatedValue: []) {
-        didSet {
-            directionsLabel.hidden = genresSelected.all { !$0.isEmpty }
-        }
-    }
+    var genresSelected = [[Genre]](count: 2, repeatedValue: [])
     var moviesSelected = [[Movie]](count: 2, repeatedValue: [])
     
     lazy var movieDatabaseClient: MovieDatabaseClient = {
@@ -69,27 +65,11 @@ class MovieMediatorViewController: UIViewController {
         
         return genreIDsDisgreedUpon.popLast()
     }
-
-    @IBOutlet weak var user1Button: UIButton!
-    @IBOutlet weak var user2Button: UIButton!
-    @IBOutlet weak var directionsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fetchGenres()
-    }
-    
-    @IBAction func user1ButtonTapped(sender: UIButton) {
-        performSegueWithIdentifier("genrePreferenceSegue", sender: sender)
-    }
-    
-    @IBAction func user2ButtonTapped(sender: UIButton) {
-        performSegueWithIdentifier("genrePreferenceSegue", sender: sender)
-    }
-    
-    @IBAction func doneButtonTapped(sender: UIButton) {
-        performSegueWithIdentifier("moviePreferenceSegue", sender: sender)
     }
 
     func fetchGenres() {
@@ -112,22 +92,13 @@ class MovieMediatorViewController: UIViewController {
         }
     }
     
-    @IBAction func doneButtonTapped() {
-        
-        guard let genreToSearch = genreIDsAgreedUpon.popLast() else {
-            return
-        }
-        
-        fetchMovies(genreToSearch)
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let genrePreferenceSelectorVC = segue.destinationViewController as? GenrePreferenceSelectorViewController, button = sender as? UIButton {
+        if let genrePreferenceSelectorVC = segue.destinationViewController as? GenrePreferenceSelectorViewController {
             genrePreferenceSelectorVC.dataSource = self
             genrePreferenceSelectorVC.delegate = self
             genrePreferenceSelectorVC.selectionPhase = 0
-            genrePreferenceSelectorVC.user_id = button == user1Button ? 0 : 1
+//            genrePreferenceSelectorVC.user_id = button == user1Button ? 0 : 1
         } else if let moviePreferenceSelectorViewController = segue.destinationViewController as? MoviePreferenceSelectorViewController {
             moviePreferenceSelectorViewController.dataSource = self
             moviePreferenceSelectorViewController.delegate = self
