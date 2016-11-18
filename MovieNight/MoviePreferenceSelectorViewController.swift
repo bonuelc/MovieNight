@@ -29,8 +29,11 @@
 //
 
 import UIKit
+import Koloda
 
 class MoviePreferenceSelectorViewController: UIViewController, PreferenceSelector {
+    
+    @IBOutlet weak var movieView: KolodaView!
     
     var itemsSelected: [Selectable] = []
     
@@ -38,7 +41,7 @@ class MoviePreferenceSelectorViewController: UIViewController, PreferenceSelecto
     var delegate: PreferenceSelectorDelegate?
     var selectionPhase: Int?
     var user_id: Int?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

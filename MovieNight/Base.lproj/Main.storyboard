@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Movie Mediator View Controller-->
@@ -165,8 +166,22 @@
                     <view key="view" contentMode="scaleToFill" id="hGN-xD-AkD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6p5-GU-ygz" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="20" y="28" width="560" height="544"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6p5-GU-ygz" firstAttribute="leading" secondItem="hGN-xD-AkD" secondAttribute="leadingMargin" id="01Y-X5-ToI"/>
+                            <constraint firstItem="6p5-GU-ygz" firstAttribute="centerX" secondItem="hGN-xD-AkD" secondAttribute="centerX" id="CdL-XO-mKb"/>
+                            <constraint firstItem="6p5-GU-ygz" firstAttribute="centerY" secondItem="hGN-xD-AkD" secondAttribute="centerY" id="IuF-3t-tFo"/>
+                            <constraint firstItem="6p5-GU-ygz" firstAttribute="top" secondItem="3My-sR-Qmm" secondAttribute="bottom" constant="8" symbolic="YES" id="UI2-F8-JxF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="movieView" destination="6p5-GU-ygz" id="8M6-tx-Qvv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eM9-I9-nIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
