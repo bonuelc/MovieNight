@@ -73,6 +73,17 @@ class MovieMediatorViewController: UIViewController {
         return genreIDsDisgreedUpon.popLast()
     }
     
+    var moviesAgreedUpon: [String] {
+        
+        let movieDescriptions1 = self.moviesSelected[0].map{ $0.description }
+        let movieDescriptions2 = self.moviesSelected[1].map{ $0.description }
+        
+        let set1 = Set(movieDescriptions1)
+        let set2 = Set(movieDescriptions2)
+        
+        return Array(set1.intersect(set2))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
