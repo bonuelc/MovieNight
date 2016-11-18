@@ -35,6 +35,16 @@ class MovieMediatorViewController: UIViewController {
     lazy var movieDatabaseClient: MovieDatabaseClient = {
         return MovieDatabaseClient()
     }()
+    
+    lazy var genreIDsAgreedUpon: [Int] = {
+        let genresIDs1 = self.genresSelected[0].map{ $0.id }
+        let genresIDs2 = self.genresSelected[1].map{ $0.id }
+        
+        let set1 = Set(genresIDs1)
+        let set2 = Set(genresIDs2)
+        
+        return Array(set1.intersect(set2))
+    }()
 
     @IBOutlet weak var user1Button: UIButton!
     @IBOutlet weak var user2Button: UIButton!
