@@ -23,8 +23,16 @@ let numberOfUsers = 2
 
 class MovieMediatorViewController: UIViewController {
     
-    var genresFromWhichToSelect = [Genre]()
-    var moviesFromWhichToSelect = [Movie]()
+    var genresFromWhichToSelect = [Genre]() {
+        didSet {
+            performSegueWithIdentifier("genrePreferenceSegue", sender: self)
+        }
+    }
+    var moviesFromWhichToSelect = [Movie]() {
+        didSet {
+            performSegueWithIdentifier("moviePreferenceSegue", sender: self)
+        }
+    }
     
     var genresSelected = [[Genre]](count: numberOfUsers, repeatedValue: [])
     var moviesSelected = [[Movie]](count: numberOfUsers, repeatedValue: [])
@@ -83,12 +91,6 @@ class MovieMediatorViewController: UIViewController {
         
         return Array(set1.intersect(set2))
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        fetchGenres()
-    }
 
     func fetchGenres() {
         movieDatabaseClient.fetchGenres { result in
@@ -111,7 +113,7 @@ class MovieMediatorViewController: UIViewController {
     }
     
     @IBAction func startButtonTapped(sender: UIButton) {
-        performSegueWithIdentifier("genrePreferenceSegue", sender: sender)
+        fetchGenres()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -122,7 +124,7 @@ class MovieMediatorViewController: UIViewController {
             genrePreferenceSelectorVC.dataSource = self
             genrePreferenceSelectorVC.delegate = self
             genrePreferenceSelectorVC.selectionPhase = 0
-            if let button = sender as? UIButton where button == startButton {
+            if sender is MovieMediatorViewController {
                 genrePreferenceSelectorVC.user_id = 0
             } else if let sender = sender as? GenrePreferenceSelectorViewController, user_id = sender.user_id {
                 genrePreferenceSelectorVC.user_id = user_id + 1
@@ -131,7 +133,7 @@ class MovieMediatorViewController: UIViewController {
             moviePreferenceSelectorViewController.dataSource = self
             moviePreferenceSelectorViewController.delegate = self
             moviePreferenceSelectorViewController.selectionPhase = 1
-            if let _ = sender as? GenrePreferenceSelectorViewController {
+            if sender is MovieMediatorViewController {
                 moviePreferenceSelectorViewController.user_id = 0
             } else if let sender = sender as? MoviePreferenceSelectorViewController, user_id = sender.user_id {
                 if user_id == last_user_id {
@@ -199,7 +201,6 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
                     fatalError("nextGenreIDToFetch returned nil the first time it was called.")
                 }
                 fetchMovies(highestPriorityGenreID)
-                performSegueWithIdentifier("moviePreferenceSegue", sender: sender)
             }
             
         } else {
@@ -215,7 +216,6 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
             } else {
                 if let genreID = nextGenreIDToFetch {
                     fetchMovies(genreID)
-                    performSegueWithIdentifier("moviePreferenceSegue", sender: sender)
                 } else {
                     performSegueWithIdentifier("resultsTableViewSegue", sender: sender)
                 }
