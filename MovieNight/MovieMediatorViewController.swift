@@ -60,6 +60,15 @@ class MovieMediatorViewController: UIViewController {
         // interleave uniqueGenresIDs1 and uniqueGenresIDs2
         return zip(uniqueGenresIDs1, uniqueGenresIDs2).flatMap { [$0, $1] }
     }()
+    
+    var nextGenreIDToFetch: Int? {
+        
+        if let genre = genreIDsAgreedUpon.popLast() {
+            return genre
+        }
+        
+        return genreIDsDisgreedUpon.popLast()
+    }
 
     @IBOutlet weak var user1Button: UIButton!
     @IBOutlet weak var user2Button: UIButton!
