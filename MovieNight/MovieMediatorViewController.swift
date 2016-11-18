@@ -45,6 +45,21 @@ class MovieMediatorViewController: UIViewController {
         
         return Array(set1.intersect(set2))
     }()
+    
+    lazy var genreIDsDisgreedUpon: [Int] = {
+        
+        let genresIDs1 = self.genresSelected[0].map{ $0.id }
+        let genresIDs2 = self.genresSelected[1].map{ $0.id }
+        
+        let set1 = Set(genresIDs1)
+        let set2 = Set(genresIDs2)
+        
+        let uniqueGenresIDs1 = Array(set1.subtract(set2))
+        let uniqueGenresIDs2 = Array(set2.subtract(set1))
+        
+        // interleave uniqueGenresIDs1 and uniqueGenresIDs2
+        return zip(uniqueGenresIDs1, uniqueGenresIDs2).flatMap { [$0, $1] }
+    }()
 
     @IBOutlet weak var user1Button: UIButton!
     @IBOutlet weak var user2Button: UIButton!
