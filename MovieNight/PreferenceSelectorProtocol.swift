@@ -32,3 +32,10 @@ extension PreferenceSelectorDataSource {
 protocol PreferenceSelectorDelegate {
     func preferenceSelectorDidFinishSelectingPreferences(preferenceSelector: PreferenceSelector)
 }
+
+protocol FixedNumberPreferenceSelector: PreferenceSelector {
+    var numberOfItemsSelected: Int { get set }
+    var numberOfItemsToSelect: Int! { get set }
+}
+
+protocol YesOrNoPreferenceSelector: PreferenceSelector {}
