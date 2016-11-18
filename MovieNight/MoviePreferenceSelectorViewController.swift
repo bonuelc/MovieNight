@@ -95,4 +95,10 @@ extension MoviePreferenceSelectorViewController: KolodaViewDelegate {
         
         itemsSelected.append(selectedItem)
     }
+    
+    func kolodaDidRunOutOfCards(koloda: KolodaView) {
+        if let delegate = delegate {
+            delegate.preferenceSelectorDidFinishSelectingPreferences(self)
+        }
+    }
 }
