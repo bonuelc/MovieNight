@@ -102,7 +102,7 @@ class MovieMediatorViewController: UIViewController {
         movieDatabaseClient.fetchGenres { result in
             switch result {
             case .Success(let genres): self.genresFromWhichToSelect = genres
-            case .Failure(let error as NSError): print(error)
+            case .Failure(let error as NSError): self.presentAlertController("Unable to retrieve genres", message: error.localizedDescription)
             default: break // TODO: why does the compiler think this is necessary?
             }
         }
@@ -112,10 +112,20 @@ class MovieMediatorViewController: UIViewController {
         movieDatabaseClient.fetchMovies(genre_ids) { result in
             switch result {
             case .Success(let movies): self.moviesFromWhichToSelect = movies
-            case .Failure(let error as NSError): print(error)
+            case .Failure(let error as NSError): self.presentAlertController("Unable to retrieve movies", message: error.localizedDescription)
             default: break // TODO: why does the compiler think this is necessary?
             }
         }
+    }
+    
+    func presentAlertController(title: String, message: String?) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let dismissAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(dismissAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
     }
     
     @IBAction func startButtonTapped(sender: UIButton) {
