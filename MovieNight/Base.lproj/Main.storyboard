@@ -177,6 +177,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-yf-euV">
                                         <rect key="frame" x="133" y="13" width="34" height="34"/>
                                         <state key="normal" image="swipe_left"/>
+                                        <connections>
+                                            <action selector="swipeLeftButtonTapped:" destination="C7x-0q-L93" eventType="touchUpInside" id="JD5-hG-dfS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -191,6 +194,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKA-Ob-lhh">
                                         <rect key="frame" x="131" y="13" width="38" height="34"/>
                                         <state key="normal" image="swipe_right"/>
+                                        <connections>
+                                            <action selector="swipeRightButtonTapped:" destination="C7x-0q-L93" eventType="touchUpInside" id="0ow-tC-7zG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

@@ -52,6 +52,14 @@ class MoviePreferenceSelectorViewController: UIViewController, PreferenceSelecto
         movieView.dataSource = self
         movieView.delegate = self
     }
+    
+    @IBAction func swipeLeftButtonTapped(sender: UIButton) {
+        movieView.swipe(.Left)
+    }
+    
+    @IBAction func swipeRightButtonTapped(sender: UIButton) {
+        movieView.swipe(.Right)
+    }
 }
 
 extension MoviePreferenceSelectorViewController: KolodaViewDataSource {
