@@ -45,6 +45,18 @@ class MoviePreferenceSelectorViewController: UIViewController, PreferenceSelecto
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let dataSource = dataSource, selectionPhase = selectionPhase {
+            if dataSource.preferenceSelector(self, numberOfItemsInSelectionPhase: selectionPhase) == 0 {
+                // return to initial view controller
+                let alertController = UIAlertController(title: "No movies retriveved!", message: "Check internet connection", preferredStyle: .Alert)
+                let dismissAction = UIAlertAction(title: "OK", style: .Default) { _ in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                alertController.addAction(dismissAction)
+                presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
+        
         if let user_id = user_id {
             title = "User \(user_id + 1)"
         }
