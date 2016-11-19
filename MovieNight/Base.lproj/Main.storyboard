@@ -3,7 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Movie Mediator View Controller-->
@@ -171,16 +171,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6p5-GU-ygz" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="20" y="28" width="560" height="544"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGg-ZV-G4k">
+                                <rect key="frame" x="0.0" y="540" width="300" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-yf-euV">
+                                        <rect key="frame" x="133" y="13" width="34" height="34"/>
+                                        <state key="normal" image="swipe_left"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3w6-gt-Lbs"/>
+                                    <constraint firstItem="iyE-yf-euV" firstAttribute="centerX" secondItem="qGg-ZV-G4k" secondAttribute="centerX" id="MNR-s2-VGG"/>
+                                    <constraint firstItem="iyE-yf-euV" firstAttribute="centerY" secondItem="qGg-ZV-G4k" secondAttribute="centerY" id="VGk-2U-0Ce"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLV-AK-s1I">
+                                <rect key="frame" x="300" y="540" width="300" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKA-Ob-lhh">
+                                        <rect key="frame" x="131" y="13" width="38" height="34"/>
+                                        <state key="normal" image="swipe_right"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cKA-Ob-lhh" firstAttribute="centerY" secondItem="bLV-AK-s1I" secondAttribute="centerY" id="bPh-Ua-5Tn"/>
+                                    <constraint firstItem="cKA-Ob-lhh" firstAttribute="centerX" secondItem="bLV-AK-s1I" secondAttribute="centerX" id="wMn-sf-kVU"/>
+                                </constraints>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6p5-GU-ygz" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="147" y="72" width="306" height="460"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6p5-GU-ygz" secondAttribute="height" multiplier="2:3" id="7pI-91-0t7"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6p5-GU-ygz" firstAttribute="leading" secondItem="hGN-xD-AkD" secondAttribute="leadingMargin" id="01Y-X5-ToI"/>
-                            <constraint firstItem="6p5-GU-ygz" firstAttribute="centerX" secondItem="hGN-xD-AkD" secondAttribute="centerX" id="CdL-XO-mKb"/>
-                            <constraint firstItem="6p5-GU-ygz" firstAttribute="centerY" secondItem="hGN-xD-AkD" secondAttribute="centerY" id="IuF-3t-tFo"/>
-                            <constraint firstItem="6p5-GU-ygz" firstAttribute="top" secondItem="3My-sR-Qmm" secondAttribute="bottom" constant="8" symbolic="YES" id="UI2-F8-JxF"/>
+                            <constraint firstItem="5Ak-qR-n6o" firstAttribute="top" secondItem="qGg-ZV-G4k" secondAttribute="bottom" id="Cfo-CB-jGG"/>
+                            <constraint firstItem="6p5-GU-ygz" firstAttribute="top" secondItem="3My-sR-Qmm" secondAttribute="bottom" constant="8" id="WSI-E3-GNY"/>
+                            <constraint firstItem="bLV-AK-s1I" firstAttribute="leading" secondItem="qGg-ZV-G4k" secondAttribute="trailing" id="bsK-Km-3ZP"/>
+                            <constraint firstItem="qGg-ZV-G4k" firstAttribute="top" secondItem="6p5-GU-ygz" secondAttribute="bottom" constant="8" id="ha4-Y1-oNU"/>
+                            <constraint firstAttribute="trailing" secondItem="bLV-AK-s1I" secondAttribute="trailing" id="kPk-0S-IzY"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6p5-GU-ygz" secondAttribute="trailing" constant="20" id="oDD-jJ-6h6"/>
+                            <constraint firstItem="qGg-ZV-G4k" firstAttribute="leading" secondItem="hGN-xD-AkD" secondAttribute="leading" id="qL9-TH-KZb"/>
+                            <constraint firstItem="5Ak-qR-n6o" firstAttribute="top" secondItem="bLV-AK-s1I" secondAttribute="bottom" id="rLY-as-5B1"/>
+                            <constraint firstItem="bLV-AK-s1I" firstAttribute="width" secondItem="qGg-ZV-G4k" secondAttribute="width" id="sjA-XC-Otv"/>
+                            <constraint firstItem="6p5-GU-ygz" firstAttribute="centerX" secondItem="hGN-xD-AkD" secondAttribute="centerX" id="t7C-Sw-yiG"/>
+                            <constraint firstItem="bLV-AK-s1I" firstAttribute="height" secondItem="qGg-ZV-G4k" secondAttribute="height" id="yGp-Lb-bpa"/>
+                            <constraint firstItem="6p5-GU-ygz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hGN-xD-AkD" secondAttribute="leading" constant="20" id="ygR-Iq-vtT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pXy-Cd-J6C"/>
@@ -247,4 +285,8 @@
             <point key="canvasLocation" x="-380" y="1245"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="swipe_left" width="34" height="34"/>
+        <image name="swipe_right" width="38" height="34"/>
+    </resources>
 </document>
