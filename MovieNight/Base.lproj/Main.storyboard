@@ -28,12 +28,20 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Night" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="tFA-wO-EnF">
+                                <rect key="frame" x="187" y="276" width="226" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Qbo-hG-HGj" firstAttribute="bottom" secondItem="tvN-Fd-hmH" secondAttribute="top" id="8EP-16-VJ6"/>
                             <constraint firstItem="Qbo-hG-HGj" firstAttribute="leading" secondItem="3Ui-Ry-EC3" secondAttribute="leading" id="SSl-pY-1Y0"/>
+                            <constraint firstItem="tFA-wO-EnF" firstAttribute="centerX" secondItem="3Ui-Ry-EC3" secondAttribute="centerX" id="Ss2-IP-YjG"/>
                             <constraint firstAttribute="trailing" secondItem="Qbo-hG-HGj" secondAttribute="trailing" id="xND-1t-7LP"/>
+                            <constraint firstItem="tFA-wO-EnF" firstAttribute="centerY" secondItem="3Ui-Ry-EC3" secondAttribute="centerY" id="zO0-JB-0O0"/>
                         </constraints>
                     </view>
                     <connections>
