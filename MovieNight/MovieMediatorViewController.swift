@@ -21,16 +21,22 @@ extension Array {
 
 let numberOfUsers = 2
 
+enum SegueIdentifier {
+    static let GenrePreference = "genrePreferenceSegue"
+    static let MoviePreference = "moviePreferenceSegue"
+    static let ResultsTableView = "resultsTableViewSegue"
+}
+
 class MovieMediatorViewController: UIViewController {
     
     var genresFromWhichToSelect = [Genre]() {
         didSet {
-            performSegueWithIdentifier("genrePreferenceSegue", sender: self)
+            performSegueWithIdentifier(SegueIdentifier.GenrePreference, sender: self)
         }
     }
     var moviesFromWhichToSelect = [Movie]() {
         didSet {
-            performSegueWithIdentifier("moviePreferenceSegue", sender: self)
+            performSegueWithIdentifier(SegueIdentifier.MoviePreference, sender: self)
         }
     }
     
@@ -191,7 +197,7 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
             genresSelected[user_id] = preferenceSelector.itemsSelected.map { $0 as! Genre }
             
             if user_id != last_user_id {
-                performSegueWithIdentifier("genrePreferenceSegue", sender: sender)
+                performSegueWithIdentifier(SegueIdentifier.GenrePreference, sender: sender)
             } else {
                 guard let highestPriorityGenreID = nextGenreIDToFetch else {
                     fatalError("nextGenreIDToFetch returned nil the first time it was called.")
@@ -208,12 +214,12 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
             moviesSelected[user_id].appendContentsOf(preferenceSelector.itemsSelected.map { $0 as! Movie })
             
             if user_id != last_user_id {
-                performSegueWithIdentifier("moviePreferenceSegue", sender: sender)
+                performSegueWithIdentifier(SegueIdentifier.MoviePreference, sender: sender)
             } else {
                 if let genreID = nextGenreIDToFetch {
                     fetchMovies(genreID)
                 } else {
-                    performSegueWithIdentifier("resultsTableViewSegue", sender: sender)
+                    performSegueWithIdentifier(SegueIdentifier.ResultsTableView, sender: sender)
                 }
             }
         }
