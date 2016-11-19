@@ -37,12 +37,33 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attribution-logo" translatesAutoresizingMaskIntoConstraints="NO" id="R9Q-rh-hmC">
+                                <rect key="frame" x="207" y="218" width="186" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3FR-Za-6NV"/>
+                                    <constraint firstAttribute="width" secondItem="R9Q-rh-hmC" secondAttribute="height" multiplier="1:1" constant="136" id="wYD-kl-ict"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This product uses the TMDb API but is not endorsed or certified by TMDb." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="XZR-6U-y9U">
+                                <rect key="frame" x="206" y="332" width="189" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="Gqb-cm-tBL"/>
+                                    <constraint firstAttribute="height" constant="26" id="i1P-6S-Ok4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="R9Q-rh-hmC" firstAttribute="centerX" secondItem="3Ui-Ry-EC3" secondAttribute="centerX" id="4lw-OV-ZRV"/>
                             <constraint firstItem="Qbo-hG-HGj" firstAttribute="bottom" secondItem="tvN-Fd-hmH" secondAttribute="top" id="8EP-16-VJ6"/>
+                            <constraint firstItem="tFA-wO-EnF" firstAttribute="top" secondItem="R9Q-rh-hmC" secondAttribute="bottom" constant="8" id="Etb-qh-5iw"/>
+                            <constraint firstItem="XZR-6U-y9U" firstAttribute="centerX" secondItem="3Ui-Ry-EC3" secondAttribute="centerX" id="Kb9-Vj-egA"/>
                             <constraint firstItem="Qbo-hG-HGj" firstAttribute="leading" secondItem="3Ui-Ry-EC3" secondAttribute="leading" id="SSl-pY-1Y0"/>
                             <constraint firstItem="tFA-wO-EnF" firstAttribute="centerX" secondItem="3Ui-Ry-EC3" secondAttribute="centerX" id="Ss2-IP-YjG"/>
+                            <constraint firstItem="XZR-6U-y9U" firstAttribute="top" secondItem="tFA-wO-EnF" secondAttribute="bottom" constant="8" id="dto-3m-bSV"/>
                             <constraint firstAttribute="trailing" secondItem="Qbo-hG-HGj" secondAttribute="trailing" id="xND-1t-7LP"/>
                             <constraint firstItem="tFA-wO-EnF" firstAttribute="centerY" secondItem="3Ui-Ry-EC3" secondAttribute="centerY" id="zO0-JB-0O0"/>
                         </constraints>
@@ -292,6 +313,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="attribution-logo" width="208" height="226"/>
         <image name="swipe_left" width="34" height="34"/>
         <image name="swipe_right" width="38" height="34"/>
     </resources>
