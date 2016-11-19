@@ -14,6 +14,12 @@ class ResultsTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Results"
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
