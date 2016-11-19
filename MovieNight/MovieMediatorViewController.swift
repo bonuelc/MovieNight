@@ -116,7 +116,9 @@ class MovieMediatorViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let genrePreferenceSelectorVC = segue.destinationViewController as? GenrePreferenceSelectorViewController {
+        guard let navController = segue.destinationViewController as? UINavigationController else { return }
+        
+        if let genrePreferenceSelectorVC = navController.topViewController as? GenrePreferenceSelectorViewController {
             genrePreferenceSelectorVC.dataSource = self
             genrePreferenceSelectorVC.delegate = self
             genrePreferenceSelectorVC.selectionPhase = 0
@@ -125,7 +127,7 @@ class MovieMediatorViewController: UIViewController {
             } else if let sender = sender as? GenrePreferenceSelectorViewController, user_id = sender.user_id {
                 genrePreferenceSelectorVC.user_id = user_id + 1
             }
-        } else if let moviePreferenceSelectorViewController = segue.destinationViewController as? MoviePreferenceSelectorViewController {
+        } else if let moviePreferenceSelectorViewController = navController.topViewController as? MoviePreferenceSelectorViewController {
             moviePreferenceSelectorViewController.dataSource = self
             moviePreferenceSelectorViewController.delegate = self
             moviePreferenceSelectorViewController.selectionPhase = 1
@@ -139,7 +141,7 @@ class MovieMediatorViewController: UIViewController {
                     moviePreferenceSelectorViewController.user_id = user_id + 1
                 }
             }
-        } else if let resultsTableVC = segue.destinationViewController as? ResultsTableViewController {
+        } else if let resultsTableVC = navController.topViewController as? ResultsTableViewController {
             resultsTableVC.data = moviesAgreedUpon
         }
     }
