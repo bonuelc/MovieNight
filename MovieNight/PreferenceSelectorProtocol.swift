@@ -8,17 +8,22 @@
 
 import Foundation
 
+enum PreferenceSelectionPhase: Int {
+    case Genre
+    case Movie
+}
+
 protocol PreferenceSelector {
     var itemsSelected: [Selectable] { get set }
     
     var dataSource: PreferenceSelectorDataSource? { get set }
     var delegate: PreferenceSelectorDelegate? { get set }
-    var selectionPhase: Int? { get set }
+    var selectionPhase: PreferenceSelectionPhase? { get set }
     var user_id: Int? { get set }
 }
 
 protocol PreferenceSelectorDataSource {
-    func preferenceSelector(preferenceSelector: PreferenceSelector, numberOfItemsInSection section: Int) -> Int
+    func preferenceSelector(preferenceSelector: PreferenceSelector, numberOfItemsInSelectionPhase selectionPhase: PreferenceSelectionPhase) -> Int
     func preferenceSelector(preferenceSelector: PreferenceSelector, itemForRowAtIndexPath indexPath: NSIndexPath) -> Selectable
     func preferenceSelector(preferenceSelector: PreferenceSelector, itemsForRowsAtIndexPaths indexPaths: [NSIndexPath]) -> [Selectable]
 }

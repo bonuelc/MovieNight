@@ -123,7 +123,7 @@ class MovieMediatorViewController: UIViewController {
         if let genrePreferenceSelectorVC = navController.topViewController as? GenrePreferenceSelectorViewController {
             genrePreferenceSelectorVC.dataSource = self
             genrePreferenceSelectorVC.delegate = self
-            genrePreferenceSelectorVC.selectionPhase = 0
+            genrePreferenceSelectorVC.selectionPhase = .Genre
             if sender is MovieMediatorViewController {
                 genrePreferenceSelectorVC.user_id = 0
             } else if let sender = sender as? GenrePreferenceSelectorViewController, user_id = sender.user_id {
@@ -132,7 +132,7 @@ class MovieMediatorViewController: UIViewController {
         } else if let moviePreferenceSelectorViewController = navController.topViewController as? MoviePreferenceSelectorViewController {
             moviePreferenceSelectorViewController.dataSource = self
             moviePreferenceSelectorViewController.delegate = self
-            moviePreferenceSelectorViewController.selectionPhase = 1
+            moviePreferenceSelectorViewController.selectionPhase = .Movie
             if sender is MovieMediatorViewController {
                 moviePreferenceSelectorViewController.user_id = 0
             } else if let sender = sender as? MoviePreferenceSelectorViewController, user_id = sender.user_id {
@@ -151,13 +151,9 @@ class MovieMediatorViewController: UIViewController {
 
 extension MovieMediatorViewController: PreferenceSelectorDataSource {
     
-    func preferenceSelector(preferenceSelector: PreferenceSelector, numberOfItemsInSection section: Int) -> Int {
+    func preferenceSelector(preferenceSelector: PreferenceSelector, numberOfItemsInSelectionPhase selectionPhase: PreferenceSelectionPhase) -> Int {
         
-        guard let selectionPhase = preferenceSelector.selectionPhase else {
-            return 0
-        }
-        
-        return selectionPhase == 0 ? genresFromWhichToSelect.count : moviesFromWhichToSelect.count
+        return selectionPhase == .Genre ? genresFromWhichToSelect.count : moviesFromWhichToSelect.count
     }
     
     func preferenceSelector(preferenceSelector: PreferenceSelector, itemForRowAtIndexPath indexPath: NSIndexPath) -> Selectable {
@@ -166,7 +162,7 @@ extension MovieMediatorViewController: PreferenceSelectorDataSource {
             return genresFromWhichToSelect[indexPath.row] // TODO: return a different dummy value
         }
         
-        if selectionPhase == 0 {
+        if selectionPhase == .Genre {
             return genresFromWhichToSelect[indexPath.row]
         } else {
             return moviesFromWhichToSelect[indexPath.row]
@@ -186,7 +182,7 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
             return
         }
         
-        if selectionPhase == 0 {
+        if selectionPhase == .Genre {
             
             guard let sender = preferenceSelector as? GenrePreferenceSelectorViewController else {
                 return

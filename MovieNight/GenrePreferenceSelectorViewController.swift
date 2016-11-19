@@ -14,7 +14,7 @@ class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelecto
         
     var dataSource: PreferenceSelectorDataSource?
     var delegate: PreferenceSelectorDelegate?
-    var selectionPhase: Int?
+    var selectionPhase: PreferenceSelectionPhase?
     var user_id: Int?
 
     @IBOutlet weak var tableView: UITableView!
@@ -67,7 +67,7 @@ extension GenrePreferenceSelectorViewController: UITableViewDataSource {
             return numberOfCellsForTesting
         }
         
-        return dataSource.preferenceSelector(self, numberOfItemsInSection: selectionPhase)
+        return dataSource.preferenceSelector(self, numberOfItemsInSelectionPhase: selectionPhase)
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -82,7 +82,7 @@ extension GenrePreferenceSelectorViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let indexPath = NSIndexPath(forRow: indexPath.row, inSection: selectionPhase)
+        let indexPath = NSIndexPath(forRow: indexPath.row, inSection: selectionPhase.rawValue)
         
         cell.textLabel?.text = dataSource.preferenceSelector(self, itemForRowAtIndexPath: indexPath).description
         

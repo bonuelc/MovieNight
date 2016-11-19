@@ -39,7 +39,7 @@ class MoviePreferenceSelectorViewController: UIViewController, PreferenceSelecto
     
     var dataSource: PreferenceSelectorDataSource?
     var delegate: PreferenceSelectorDelegate?
-    var selectionPhase: Int?
+    var selectionPhase: PreferenceSelectionPhase?
     var user_id: Int?
     
     override func viewDidLoad() {
@@ -70,7 +70,7 @@ extension MoviePreferenceSelectorViewController: KolodaViewDataSource {
             return UInt(0)
         }
         
-        return UInt(dataSource.preferenceSelector(self, numberOfItemsInSection: selectionPhase))
+        return UInt(dataSource.preferenceSelector(self, numberOfItemsInSelectionPhase: selectionPhase))
     }
     
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
@@ -80,7 +80,7 @@ extension MoviePreferenceSelectorViewController: KolodaViewDataSource {
         }
         
         let index = Int(index)
-        let indexPath = NSIndexPath(forRow: index, inSection: selectionPhase)
+        let indexPath = NSIndexPath(forRow: index, inSection: selectionPhase.rawValue)
         guard let movie = dataSource.preferenceSelector(self, itemForRowAtIndexPath: indexPath) as? Movie else {
             return UIView()
         }
@@ -102,7 +102,7 @@ extension MoviePreferenceSelectorViewController: KolodaViewDelegate {
         }
         
         let index = Int(index)
-        let indexPath = NSIndexPath(forRow: index, inSection: selectionPhase)
+        let indexPath = NSIndexPath(forRow: index, inSection: selectionPhase.rawValue)
         let selectedItem = dataSource.preferenceSelector(self, itemForRowAtIndexPath: indexPath)
         
         itemsSelected.append(selectedItem)
