@@ -30,6 +30,10 @@ class GenrePreferenceSelectorViewController: UIViewController, PreferenceSelecto
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let user_id = user_id {
+            title = "User \(user_id + 1)"
+        }
 
         tableView.dataSource = self
         tableView.delegate = self

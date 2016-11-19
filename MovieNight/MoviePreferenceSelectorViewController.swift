@@ -45,6 +45,10 @@ class MoviePreferenceSelectorViewController: UIViewController, PreferenceSelecto
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let user_id = user_id {
+            title = "User \(user_id + 1)"
+        }
+        
         movieView.dataSource = self
         movieView.delegate = self
     }
