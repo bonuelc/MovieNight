@@ -129,7 +129,11 @@ class MovieMediatorViewController: UIViewController {
     }
     
     @IBAction func startButtonTapped(sender: UIButton) {
-        fetchGenres()
+        if genresFromWhichToSelect.count == 0 {
+            fetchGenres()
+        } else {
+            performSegueWithIdentifier(SegueIdentifier.GenrePreference, sender: self)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
