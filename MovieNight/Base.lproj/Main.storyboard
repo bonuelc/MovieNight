@@ -102,7 +102,13 @@
                             <outlet property="delegate" destination="dAU-K2-w6V" id="cew-0A-8rb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="6Qr-OT-3h1"/>
+                    <navigationItem key="navigationItem" id="6Qr-OT-3h1">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="tYf-VZ-4b7">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="dAU-K2-w6V" id="ziQ-gY-9jb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O0-UZ-cVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

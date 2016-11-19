@@ -18,6 +18,10 @@ class ResultsTableViewController: UITableViewController {
         return data.count
     }
     
+    @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("resultCell", forIndexPath: indexPath)
