@@ -230,7 +230,11 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
             if user_id != last_user_id {
                 performSegueWithIdentifier(SegueIdentifier.MoviePreference, sender: sender)
             } else {
-                if let genreID = nextGenreIDToFetch {
+                // show results as soon as a round of selections produce at least one movie in common
+                if !moviesAgreedUpon.isEmpty {
+                    performSegueWithIdentifier(SegueIdentifier.ResultsTableView, sender: sender)
+                }
+                else if let genreID = nextGenreIDToFetch {
                     fetchMovies(genreID)
                 } else {
                     performSegueWithIdentifier(SegueIdentifier.ResultsTableView, sender: sender)
