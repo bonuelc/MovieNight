@@ -237,6 +237,7 @@ extension MovieMediatorViewController: PreferenceSelectorDelegate {
                 else if let genreID = nextGenreIDToFetch {
                     fetchMovies(genreID)
                 } else {
+                    // no movies in common
                     performSegueWithIdentifier(SegueIdentifier.ResultsTableView, sender: sender)
                 }
             }
