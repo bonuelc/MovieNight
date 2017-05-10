@@ -132,7 +132,7 @@ class MovieMediatorViewController: UIViewController {
         if genresFromWhichToSelect.count == 0 {
             fetchGenres()
         } else {
-            // , don't fetch again
+            // genres have already been fetched, don't fetch again
             performSegueWithIdentifier(SegueIdentifier.GenrePreference, sender: self)
         }
     }
